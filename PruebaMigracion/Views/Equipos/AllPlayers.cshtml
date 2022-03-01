@@ -1,0 +1,85 @@
+﻿@model IEnumerable<PruebaMigracion.Models.Jugador>
+
+@{
+    ViewData["Title"] = "AllPlayers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center">Listado de Jugadores </h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Index">Volver Atras</a>
+</p>
+
+
+<div>
+    <table class="table table-hover">
+        <thead  class="thead-dark">
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Nombre
+                </th>
+                 <th>
+                    Apellido
+                </th>
+                <th>
+                   Fecha Nacimiento
+                </th>
+                 <th>
+                    Pasaporte
+                </th>
+                 <th>
+                    Direccion 
+                </th>
+                 <th>
+                    Sexo
+                </th>
+                <th>
+                    Estado
+                </th>
+                <th>
+                    Equipo
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+@foreach (var item in Model) {
+        <tr>
+             <td>
+                @Html.DisplayFor(modelItem => item.IdJugador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pasaporte)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sexo)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoJ.Nombre)
+            </td>
+            <td>
+                <p class="text-primary">
+                     @Html.DisplayFor(modelItem => item.EquipoJ.Nombre)
+                </p>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

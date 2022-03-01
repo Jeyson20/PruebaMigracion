@@ -1,0 +1,68 @@
+﻿@model PruebaMigracion.Models.Jugador
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Eliminar</h1>
+<h2>Seguro que quieres eliminar este jugador ?</h2>
+<hr />
+<div>
+    <dl class="row center">
+    <span asp-validation-for="IdJugador" class="text-danger"></span>
+        <dt class = "col-sm-2">
+            Nombre
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            Apellido
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+        <dt class = "col-sm-2">
+            Fecha Nacimiento
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+        <dt class = "col-sm-2">
+            Pasaporte
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pasaporte)
+        </dd>
+        <dt class = "col-sm-2">
+            Direccion
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+        <dt class = "col-sm-2">
+            Sexo
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sexo)
+        </dd>
+        <dt class = "col-sm-2">
+            Equipo
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EquipoJ.Nombre)
+        </dd class>
+        <dt class = "col-sm-2">
+            Estado
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EstadoJ.Nombre)
+        </dd class>
+    </dl>
+    
+     <form asp-action="Delete">
+        <input type="hidden" asp-for="IdJugador" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+         <a class="btn btn-primary" asp-action="Index">Cancelar</a>
+    </form>
+</div>
